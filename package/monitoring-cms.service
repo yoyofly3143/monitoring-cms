@@ -1,0 +1,9 @@
+[Unit]
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/monitoring-cms
+ExecStart=/opt/monitoring-cms/monitoring-cms
+
+[Install]
+WantedBy=multi-user.target

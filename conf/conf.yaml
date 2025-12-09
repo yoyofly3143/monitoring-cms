@@ -1,0 +1,28 @@
+# 服务监听端口
+server:
+  port: "8080"
+
+# cmdb配置，当前使用的账号为：cmdb_auto_agent
+cmdb:
+  address: "http://cmdb.ttpai.work"
+  Key: ""
+  Secret: ""
+
+# consul配置
+consul:
+  address: 10.29.249.234:8500
+  job_name:
+    machine: consul-prod-machine
+    blackbox_app_service: consul-prod-blackbox-probe-app-service
+    app_service_ms: consul-prod-app-service-ms
+    app_service: consul-prod-app-service
+    domain_ip: consul-prod-blackbox-probe-domain-ip
+    blackbox_exporter: consul-prod-blackbox-metrics
+    mysql: consul-prod-mysql
+  # labels: # 为所有过境数据添加标签
+  #   zhangwanlin_test: 1
+
+job:
+  env:
+    online: true  # 启动线上环境的job
+    offline: false  # 启动线下环境的job
